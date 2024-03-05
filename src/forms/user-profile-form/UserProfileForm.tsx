@@ -2,7 +2,7 @@ import LoadingButton from "@/components/LoadingButton";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { User } from "@/type";
+import { User } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
@@ -30,9 +30,9 @@ const UserProfileForm = ({ onSave, isLoading, currentUser }: Props) => {
         defaultValues: currentUser,
     });
 
-    useEffect(()=>{
+    useEffect(() => {
         form.reset(currentUser);
-    },[currentUser,form])
+    }, [currentUser, form])
 
     return (
         <Form {...form}>
